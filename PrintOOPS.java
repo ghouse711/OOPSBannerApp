@@ -1,6 +1,6 @@
 /**
 
-* OOPSBannerApp UC5 – Banner Display Application
+* OOPSBannerApp UC6 – Banner Display Application
 *
 * This class demonstrates the creation of a visual banner displaying the word "OOPS"
 * using ASCII art composed of asterisks (*) and spaces. The banner is printed to the
@@ -12,21 +12,41 @@
 * This extends a basic user story by adding visual presentation to	 a simple message output.
 * We now use String join to print the OOPS Banner
 * after using string join, to reduce friction while printing out, we now use as array and for loop
+
 * now we initiate array without using new String[]
+* Static methods are used to get the pattern
 * @author Developer
-* @version 5
+* @version 6
 
 */
  
 
-class PrintOOPS{
+public class PrintOOPS{
 
 	public static void main(String[] args){
-		String[] str = {String.join(" ", "    ***    " , "     ***    " , " *******  " , "   *****  "), String.join(" ", " **     ** " , "  **     ** " , " **    ** " , "  **      "), String.join(" ", "**       **" , " **       **" , " **     **" , " **       "), String.join(" ", "**       **" , " **       **" , " **    ** " , "  **      "), String.join(" ", "**       **" , " **       **" , " ****     " , "   ***    "), String.join(" ", "**       **" , " **       **" , " **       " , "      ** "), String.join(" ", "**       **" , " **       **" , " **       " , "       **"), String.join(" ", " **     ** " , "  **     ** " , " **       " , "      ** "), String.join(" ", "    ***    " , "     ***    " , " **       " , "  ******  ")};
-		for(String itr: str){
-				System.out.println(itr);
+		String[] oo = GetOOPS.getO();
+		String[] pp = GetOOPS.getP();
+		String[] ss = GetOOPS.getS();
+		for(int i=0; i<oo.length; i++){
+				System.out.println(String.join(" ", oo[i], oo[i], pp[i], ss[i]));
 		}
 
+	}
+
+}
+
+class GetOOPS{
+	public static String[] getO(){
+		String[] str = {" ***** ", "*     * ", "*     * ", "*     * ", "*     * ", " *****  "};
+		return str;
+	}
+	public static String[] getP(){
+		String[] str = {" *****  ", "*     * ", "*     * ", "*****  ", "*       ", " *     "};
+		return str;
+	}
+	public static String[] getS(){
+		String[] str = {"   **** ", " *     ", " *     ", "  ***** ", "     * ", "  ***** "};
+		return str;
 	}
 
 }
